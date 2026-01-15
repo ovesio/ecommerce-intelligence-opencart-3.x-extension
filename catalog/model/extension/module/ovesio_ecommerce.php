@@ -3,12 +3,14 @@ class ModelExtensionModuleOvesioEcommerce extends Model {
 
 	public function getOrders($period_months = 12) {
 		$period_months = (int)$period_months;
-
+        $config_complete_status = (array)$this->config->get('config_complete_status');
 		$sql = "SELECT op.order_id as order_id, MD5(o.email) as customer_id, p.product_id as sku, op.name, op.quantity, (op.price + op.tax) as price, o.total, o.date_added as `date`
                 FROM `" . DB_PREFIX . "order_product` op
                 JOIN `" . DB_PREFIX . "product` p ON p.product_id = op.product_id
                 JOIN `" . DB_PREFIX . "order` o ON o.order_id = op.order_id
-                WHERE o.date_added >= DATE_FORMAT(DATE_SUB(NOW(), INTERVAL " . (int)$period_months . " MONTH), '%Y-%m-01') AND o.order_status_id > 0
+                WHERE o.date_added >= DATE_FORMAT(DATE_SUB(NOW(), INTERVAL " . (int)$period_months . " MONTH), '%Y-%m-01')
+                AND o.order_status_id > 0
+                AND o.order_status_id IN (" . implode(',', $config_complete_status) . ")
                 ORDER BY op.order_product_id ASC";
 
 		$query = $this->db->query($sql);
