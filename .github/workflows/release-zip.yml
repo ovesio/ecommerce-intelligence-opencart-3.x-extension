@@ -17,8 +17,14 @@ jobs:
       - name: Build zip with folder prefix
         run: |
           mkdir -p build/upload
-          cp -r admin catalog system build/upload/
-          cd build
+
+          rsync -av --delete \
+            --exclude='.github' \
+            --exclude='.git' \
+            --exclude='README.md' \
+            ./ build/upload/
+
+          cd build/upload
           zip -r ../ovesio_ecommerce.ocmod.zip .
 
       - name: Upload asset
