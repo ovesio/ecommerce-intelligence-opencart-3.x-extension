@@ -39,14 +39,14 @@ Connect your store to Ovesio to unlock powerful capabilities:
 2. **Upload & Install:** You have two options to install the module:
 
     **Option A: OCMOD Installation (Recommended)**
-    *   Download the `ovesio-ecommerce-intelligence.ocmod.zip` archive.
+    *   Download the `ovesio_ecommerce.ocmod.zip` archive from the [Releases](https://github.com/ovesio/ovesio-ecommerce-opencart-3.x/releases) page.
     *   Login to your OpenCart Admin Panel.
     *   Go to **Extensions** > **Installer**.
     *   Click **Upload** and select the downloaded zip file.
     *   Wait for the success message.
 
     **Option B: Manual Installation (FTP)**
-    *   Extract the contents of the `ovesio-ecommerce-intelligence.ocmod.zip` archive.
+    *   Extract the contents of the `ovesio_ecommerce.ocmod.zip` archive.
     *   Open the `upload` folder.
     *   Upload the contents of the `upload` folder (`admin` and `catalog` directories) to the root directory of your OpenCart installation (usually `public_html`).
     *   *Note: No core files are overwritten.*

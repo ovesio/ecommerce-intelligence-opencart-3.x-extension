@@ -1,0 +1,29 @@
+name: build-plugin-zip
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build zip with folder prefix
+        run: |
+          mkdir -p build/upload
+          cp -r admin catalog system build/upload/
+          cd build
+          zip -r ../ovesio_ecommerce.ocmod.zip .
+
+      - name: Upload asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ovesio_ecommerce.ocmod.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
