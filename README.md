@@ -1,4 +1,4 @@
-# Ovesio - Ecommerce Intelligence for OpenCart 3.x
+# Ovesio - Ecommerce Intelligence Extension for OpenCart 3.x
 
 **Ovesio - Ecommerce Intelligence** empowers your OpenCart store with advanced AI-driven insights, stock management forecasting, and strategic consulting. This module generates secure data feeds for your products and orders, allowing the Ovesio platform to analyze your business performance in real-time.
 
@@ -39,7 +39,7 @@ Connect your store to Ovesio to unlock powerful capabilities:
 2. **Upload & Install:** You have two options to install the module:
 
     **Option A: OCMOD Installation (Recommended)**
-    *   Download the `ovesio_ecommerce.ocmod.zip` archive from the [Releases](https://github.com/ovesio/ovesio-ecommerce-opencart-3.x/releases) page.
+    *   Download the latest version of `ovesio_ecommerce.ocmod.zip` from the [Releases](https://github.com/ovesio/ecommerce-intelligence-opencart-3.x-extension/releases) section.
     *   Login to your OpenCart Admin Panel.
     *   Go to **Extensions** > **Installer**.
     *   Click **Upload** and select the downloaded zip file.
