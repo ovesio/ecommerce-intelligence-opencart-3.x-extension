@@ -54,7 +54,7 @@ class ModelExtensionModuleOvesioEcommerce extends Model {
             (
             SELECT GROUP_CONCAT(TRIM(cd.name) SEPARATOR  ' > ')
             FROM " . DB_PREFIX . "category_path cp
-            JOIN " . DB_PREFIX . "category_description cd ON cd.category_id = cp.path_id
+            JOIN " . DB_PREFIX . "category_description cd ON cd.category_id = cp.path_id AND cd.language_id = $language_id
             WHERE cp.category_id = (SELECT cd.category_id FROM " . DB_PREFIX . "category_path cp
                 LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (cp.category_id = p2c.category_id AND cp.path_id = p2c.category_id)
                 LEFT JOIN " . DB_PREFIX . "category c ON (c.category_id = p2c.category_ID)
